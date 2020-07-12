@@ -1,55 +1,35 @@
-//Creating arrays
-const numbers = [2, 4, 5, 6, 8, 10, 12, 14, 15, 17];
-const numbers2 = new Array(2, 4, 5, 6, 8, 10, 12, 14, 15, 17);
+// for loops, while loops, do while loops
+// for each loops - for looping through array
+//map, for in - for looping through objects
 
-const frutis = ["Apple", "Grapes", "Bananas", "Pine Apple"];
-const mixed = [22, "Apple", new Date(), undefined, false, null, { a: 1, b: 1 }];
+// //for loop
+// for (let i = 0; i < 10; i++) {
+//   if (i === 2) {
+//     continue;
+//   } // use continue to skip the loop
 
-let val;
+//   if (i === 5) {
+//     break;
+//   } //use break to exit the loop
+//   console.log(i);
+// }
 
-val = numbers.length;
+// for loop when number if iteration required is clear, while if unclear
+//WHILE loop
 
-val = Array.isArray(frutis); //checks if an object is array
-val = Array.isArray("hello"); //returns false, while you can deal with a string as an array
+// let i = 0;
 
-val = numbers[5]; //array 0 based
+// while (i < 10) {
+//   console.log(i);
+//   i++;
+// }
 
-numbers[5] = 9; //replaces number at position 5
+//DO WHILE - will run atleast once - no matter what
 
-val = numbers.indexOf(12);
-val = numbers.indexOf(36); //return -1 is not present in array
+// let i = 11;
 
-numbers.push(20); //add at back
-numbers.unshift(1); //add in front
-numbers.pop(); // remove from back
-numbers.shift(); // remove from front
+// do {
+//   console.log(i);
+// } while (i < 10);
 
-// numbers.splice(5);
-// numbers.splice(2, 3);
-
-// numbers.splice(3, 3); //remove the selection from the array and return the remaning
-
-numbers.reverse();
-
-val = numbers.concat(numbers2);
-val = frutis.sort();
-val = numbers.sort(); //sorts as string, rather than as a number - returns [12, 14, 15, 17, 2, 4, 5, 6, 8, 9]
-
-// use the "compare function"
-val = numbers.sort(function(x, y) {
-  return x - y;
-}); // for ascending order
-
-val = numbers.sort(function(x, y) {
-  return y - x;
-}); // for descedning order
-
-//Find
-function under10(num) {
-  return num < 10;
-}
-
-val = numbers.find(under10);
-
-console.log(val);
-console.log(numbers);
+//The above will lead to infite loop and browser stops working
