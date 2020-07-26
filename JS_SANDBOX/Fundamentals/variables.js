@@ -61,3 +61,32 @@ person = {
 };
 
 //Similalry Arrays, values inside array can be changed
+
+//Block scopes of let and const
+
+//Global Scope
+//these variables have global scpe
+var a = 1;
+let b = 2;
+const c = 3;
+
+function test() {
+  //these have function scope
+  var a = 4; //same vari
+  let b = 5;
+  const c = 6;
+  console.log("Function Scope: ", a, b, c);
+}
+
+console.log("Global Scope: ", a, b, c);
+
+test();
+
+if (true) {
+  var a = 4;
+  let b = 5;
+  const c = 6;
+  console.log("Block Scope: ", a, b, c);
+}
+
+console.log("Global Scope: ", a, b, c);
