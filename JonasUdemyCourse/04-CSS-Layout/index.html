@@ -18,30 +18,35 @@
     -->
     <!-- Comments Sections -->
     <div class="main-container">
-      <header class="main-header">
+      <header class="main-header clearfix">
         <!-- <h1 style="color: yellowgreen">📘 The Code Magazine</h1> -->
         <h1>📘 The Code Magazine</h1>
         <nav>
           <a href="blog.html" target="_blank">Blog</a>
           <a href="#">Challenges</a>
-          <a href="#">CSS Grid</a>
+          <a href="css-grid.html">CSS Grid</a>
+          <a href="flexbox.html">Flexbox</a>
         </nav>
+        <div class="clear"></div>
       </header>
       <article>
         <header>
           <h2>Basic Language of the Web: HTML</h2>
-          <img
-            src="img/laura-jones.jpg"
-            alt="Author's picture, Laura Jones"
-            width="50"
-            height="50"
-          />
 
-          <!-- <p>Posted by <b>Laura Jones</b> on Monday, June 21st 2027</p> -->
-          <p id="author">
-            Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
-          </p>
+          <div class="author-box">
+            <img
+              src="img/laura-jones.jpg"
+              alt="Author's picture, Laura Jones"
+              width="50"
+              height="50"
+              class="author-img"
+            />
 
+            <!-- <p>Posted by <b>Laura Jones</b> on Monday, June 21st 2027</p> -->
+            <p id="author" class="author">
+              Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+            </p>
+          </div>
           <img
             src="img/post-img.jpg"
             alt="HTML code on a screenshot"
