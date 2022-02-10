@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class LinkedList {
+export class LinkedList {
   // constructor() {
   //   this.head = null;
   //   this.tail = null;
@@ -36,6 +36,23 @@ class LinkedList {
       this.tail = newNode;
     }
     this.length++; //don't forget to ++ length
+    return this;
+  }
+
+  pushWithoutTail(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      let last = this.head;
+      while (last.next != null) {
+        //traversing to last child or finding tail, using only the head pointer
+        last = last.next;
+      }
+      last.next = newNode;
+      newNode.next = null;
+    }
     return this;
   }
 
@@ -106,6 +123,7 @@ Remove node from the beginning
     return this;
   }
 
+  /* get */
   get(index) {
     if (index < 0 || index >= this.length) {
       console.log("Index Out of Bounds");
@@ -119,8 +137,90 @@ Remove node from the beginning
   }
 
   /* Set the value at the index */
-  set(index, value) {}
-  insert(index, value) {} //create new node and add in the middle
+  set(index, value) {
+    let tempNode = this.get(index);
+    if (tempNode) {
+      tempNode.value = value;
+      console.log("Value has been set");
+    }
+    console.log("Value hasn't been set");
+  }
+
+  //create new node and add in the middle
+  insert(index, value) {
+    if (index === 0) {
+      console.log("index is 0, this is unshift");
+      return this.unshift(value);
+    } else if (index == this.length) {
+      console.log("index is the tail, this is push");
+      return this.push(value);
+    } else if (index < 0 || index >= this.length) {
+      console.log("Index Out of Bounds");
+      return false;
+    } else {
+      const newNode = new Node(value);
+
+      let temp = this.get(index - 1);
+      let nextToTemp = this.get(index);
+      temp.next = newNode;
+      newNode.next = nextToTemp;
+
+      this.length++;
+      return this;
+    }
+  }
+
+  removeFrom(index) {
+    if (index === 0) {
+      console.log("index is 0, this is shift");
+      return this.shift();
+    } else if (index == this.length) {
+      console.log("index is the tail, this is pop");
+      return this.pop();
+    } else if (index < 0 || index >= this.length) {
+      console.log("Index Out of Bounds");
+      return false;
+    } else {
+      let before = this.get(index - 1);
+      let temp = before.next;
+
+      before.next = temp.next;
+
+      console.log("Removed Node " + temp.value);
+
+      temp.next = null;
+      this.length--;
+      return this;
+    }
+  }
+
+  traverseLinkedList() {
+    let temp = this.head;
+    const list_array = new Array();
+    while (temp != null) {
+      list_array.push(temp.value);
+      temp = temp.next;
+    }
+    console.log(list_array);
+  }
+
+  reverseALinkedList() {
+    let curr = this.head;
+    // this.head = this.tail;  //with out using tail pointer
+    // this.tail = curr;
+
+    let before = null;
+    let after = null;
+
+    while (curr != null) {
+      after = curr.next;
+      curr.next = before;
+      before = curr;
+      curr = after;
+    }
+    this.head = before;
+    return this;
+  }
 }
 
 let myLinkedList = new LinkedList(10);
@@ -135,6 +235,17 @@ myLinkedList.push(7);
 myLinkedList.push(4);
 myLinkedList.unshift(9);
 
-console.log(myLinkedList);
-
 console.log(myLinkedList.get(3));
+console.log(myLinkedList.set(3, 10));
+console.log(myLinkedList.get(3));
+
+myLinkedList.insert(4, 11);
+myLinkedList.insert(0, 17);
+myLinkedList.removeFrom(1);
+
+myLinkedList.reverseALinkedList();
+
+myLinkedList.traverseLinkedList();
+
+myLinkedList.pushWithoutTail(19);
+myLinkedList.traverseLinkedList();
