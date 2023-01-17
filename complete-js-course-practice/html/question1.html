@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 1</title>
+  </head>
+  <body>
+    <h1>Question 1</h1>
+    <div class="question-box">
+      <p>
+        Mark and John are trying to compare their BMI (Body Mass Index), which
+        is calculated using the formula: BMI = mass / height ** 2 = mass /
+        (height * height). (mass in kg and height in meter).
+      </p>
+      <p>1. Store Mark's and John's mass and height in variables</p>
+      <p>
+        2. Calculate both their BMIs using the formula (you can even implement
+        both versions)
+      </p>
+      <p>
+        3. Create a boolean variable 'markHigherBMI' containing information
+        about whether Mark has a higher BMI than John.
+      </p>
+
+      <p>
+        TEST DATA 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg
+        and is 1.95 m tall.
+      </p>
+      <p>
+        TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg
+        and is 1.76 m tall.
+      </p>
+    </div>
+
+    <div class="answer-box">
+      <form class="bmi_form">
+        <input
+          id="mark_mass"
+          class="mark_mass"
+          type="text"
+          src="../js/script-1.js"
+          placeholder="Mass"
+        />
+        <input
+          id="mark_height"
+          class="mark_height"
+          type="text"
+          placeholder="Height"
+        />
+        <input
+          id="mark_bmi"
+          class="mark_bmi"
+          type="text"
+          placeholder="BMI"
+          onkeyup="form_1_Changed()"
+          onchange="form_1_Changed()"
+        />
+      </form>
+      <button href="#" class="calculate" onclick="form_1_Changed()">
+        Calculate
+      </button>
+      <span
+        id="tick_mark_mark"
+        hidden="hidden"
+        style="font-family: Arial Unicode MS, Lucida Grande"
+      >
+        &#10003;
+      </span>
+
+      <form class="bmi_form">
+        <input
+          id="john_mass"
+          class="john_mass"
+          type="text"
+          placeholder="Mass"
+        />
+        <input
+          id="john_height"
+          class="john_height"
+          type="text"
+          placeholder="Height"
+        />
+        <input
+          id="john_bmi"
+          class="john_bmi"
+          type="text"
+          placeholder="BMI"
+          onkeyup="form_1_Changed()"
+          onchange="form_1_Changed()"
+        />
+      </form>
+      <button href="#" class="practiceButton" onclick="form_2_Changed()">
+        Calculate
+      </button>
+      <span
+        id="tick_mark_john"
+        hidden="hidden"
+        style="font-family: Arial Unicode MS, Lucida Grande"
+      >
+        &#10003;
+      </span>
+
+      <button
+        href="#"
+        class="compare"
+        src="../js/script-1.js"
+        onclick="calculateHigher()"
+      >
+        Compare
+      </button>
+    </div>
+    <script src="../js/script-1.js"></script>
+  </body>
+</html>
