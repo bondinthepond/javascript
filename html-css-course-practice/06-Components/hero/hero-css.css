@@ -1,0 +1,84 @@
+* {
+  /*   default reset options */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  color: #444;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+header {
+  height: 100vh; /* 100% of available view port, similarly vw - view port width - which block elements anyways occupy */
+  position: relative;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    /*to shade an image, add a gradient */ url(hero.jpg);
+  background-size: cover; /* to ensure background covers the entire element of header*/
+
+  color: #fff;
+  padding-top: 40px;
+}
+
+.header-container {
+  width: 1200px;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: left;
+}
+
+nav {
+  font-weight: 700;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+  /* for gradients */
+  /* background-image: linear-gradient(red, blue);
+  background-image: linear-gradient(to right, red, blue); */
+}
+
+h1 {
+  font-size: 52px;
+  margin-bottom: 32px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+h2 {
+  font-size: 44px;
+  margin-bottom: 48px;
+}
+
+section {
+  padding: 96px 0;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #fd7e14;
+  color: #fff;
+  text-decoration: none;
+
+  display: inline-block; /* becuase we are dealing with a pseudo element */
+  padding: 16px 32px;
+  border-radius: 10px;
+}

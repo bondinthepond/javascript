@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* How elements that don't fit into container appear */
+/* overflow: scroll; */
